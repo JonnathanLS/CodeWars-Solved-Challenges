@@ -13,3 +13,5 @@ Write a function that will return the count of distinct case-insensitive alphabe
 - "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
 - "aA11" -> 2 # 'a' and '1'
 - "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+> https://www.codewars.com/kata/54bf1c2cd5b56cc47f0007a1
