@@ -25,3 +25,6 @@ Thumbs.db
 # lock files
 package-lock.json
 yarn.lock
+
+# logs
+yarn-error.log
