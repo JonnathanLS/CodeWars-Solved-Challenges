@@ -10,11 +10,10 @@ function randomTesting(){
 }
 describe("integers-recreation-one", function() {
   it("asserts", function() {
-    // testing(1, 30000, [[1, 1], [42, 2500], [246, 84100], [287, 84100]]);
     testing(42, 300, [[42, 2500], [246, 84100], [287, 84100]]);
     testing(200, 500, [[246, 84100], [287, 84100]]);
     testing(728,728,[[728,722500]]); 
-    testing(1,1,[[1,1]]);  
+    testing(1,42,[[1,1], [42,2500]]);  
     testing(300, 600, []);
   });
 });
