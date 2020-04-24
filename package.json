@@ -7,7 +7,7 @@
   "author": "Jonnathan Lacerda Santos <jonnathan.lacerda.santos@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "mocha -s 0 -g 'integers-recreation-one'"
+    "test": "mocha -s 0"
   },
   "devDependencies": {
     "@types/mocha": "^7.0.2",
