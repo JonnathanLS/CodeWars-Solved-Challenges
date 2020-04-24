@@ -3,7 +3,7 @@ import { assert } from "chai";
 import solution = require('./solution');
 
 function testing(m: number, n: number, expected: number[][]): void {
-  assert.deepEqual(solution.G964.listSquared(m, n), expected);
+  assert.deepEqual(solution.G964.listSquared3(m, n), expected);
 }
 function randomTesting(){
   return 1;

@@ -1,30 +1,20 @@
 export class G964 {
-	// FIRST SOLUTION - LOOP
-	public static listSquared = (m, n) => {
-		const result: number[][] = [];
-		// Suport Steps
-		const its_a_divisor = (num: number, div: number) => num % div === 0;
-		const divisors = (num: number): number[] => {
-			const divisors: number[] = [];
-			for(let i = 1; i <= num; i++) 
-				if(its_a_divisor(num, i)) divisors.push(i); 
-			return divisors;
+	// OPTIMIZED SOLUTION - BEST TIME
+	// TEST EXECUTION TIME IN 26ms
+	public static listSquared3 = (m: number, n:number) => {
+		const list: number[][] = [];
+		let sum: number = 0;
+		for (let x = m; x <= n; x++) {
+			if (x === 1) { list.push([1, 1]); continue }
+			for (let y = 1; y <= x; y++) sum += x % y === 0 ? y * y : 0;
+			if(Math.sqrt(sum) % 1 === 0) list.push([x, sum]);
+			sum = 0;
 		}
-		const squared_divisors = (array: number[]) => array.map(n => n * n);
-		const sum_of_the_squared_divisors = (array: number[]) => array.reduce((acc, cv) => acc + cv);
-		const its_a_square = (num: number) => Math.sqrt(num) % 1 === 0;
-		// Step Cycle
-		const procedures = (num: number) =>{
-			const divs = divisors(num);
-			const sqr_divs: number[] = squared_divisors(divs);
-			const sum_sqr_divs: number = sum_of_the_squared_divisors(sqr_divs);
-			if ( its_a_square(sum_sqr_divs) ) result.push([num,sum_sqr_divs]);
-		}
-		// Main Step
-		for (let i = m; i <= n; i++) procedures(i);
-		return result;
+		return list;
 	}
-	// SECOND SOLUTION - WITH PRIMARY FACTOR LOGIC
+
+	// SECOND SOLUTION - With Primary Factor Logic
+	// TEST EXECUTION TIME IN 81ms - WORST TIME
 	public static listSquared2(m: number, n:number) {
 		const result: number[][] = [];
 		// Step Cycle
@@ -68,5 +58,32 @@ export class G964 {
 			num = rest;
 		}
 		return divisors.sort( (n1, n2) => n1 - n2 );	
+	}
+
+	// FIRST SOLUTION - LOOP 
+	// TEST EXECUTION TIME IN 31ms
+	public static listSquared1 = (m, n) => {
+		const result: number[][] = [];
+		// Suport Steps
+		const its_a_divisor = (num: number, div: number) => num % div === 0;
+		const divisors = (num: number): number[] => {
+			const divisors: number[] = [];
+			for(let i = 1; i <= num; i++) 
+				if(its_a_divisor(num, i)) divisors.push(i); 
+			return divisors;
+		}
+		const squared_divisors = (array: number[]) => array.map(n => n * n);
+		const sum_of_the_squared_divisors = (array: number[]) => array.reduce((acc, cv) => acc + cv);
+		const its_a_square = (num: number) => Math.sqrt(num) % 1 === 0;
+		// Step Cycle
+		const procedures = (num: number) =>{
+			const divs = divisors(num);
+			const sqr_divs: number[] = squared_divisors(divs);
+			const sum_sqr_divs: number = sum_of_the_squared_divisors(sqr_divs);
+			if ( its_a_square(sum_sqr_divs) ) result.push([num,sum_sqr_divs]);
+		}
+		// Main Step
+		for (let i = m; i <= n; i++) procedures(i);
+		return result;
 	}
 }
