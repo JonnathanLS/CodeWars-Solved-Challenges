@@ -1,5 +1,31 @@
 export class G964 {
-	public static listSquared(m: number, n:number) {
+	// FIRST SOLUTION - LOOP
+	public static listSquared = (m, n) => {
+		const result: number[][] = [];
+		// Suport Steps
+		const its_a_divisor = (num: number, div: number) => num % div === 0;
+		const divisors = (num: number): number[] => {
+			const divisors: number[] = [];
+			for(let i = 1; i <= num; i++) 
+				if(its_a_divisor(num, i)) divisors.push(i); 
+			return divisors;
+		}
+		const squared_divisors = (array: number[]) => array.map(n => n * n);
+		const sum_of_the_squared_divisors = (array: number[]) => array.reduce((acc, cv) => acc + cv);
+		const its_a_square = (num: number) => Math.sqrt(num) % 1 === 0;
+		// Step Cycle
+		const procedures = (num: number) =>{
+			const divs = divisors(num);
+			const sqr_divs: number[] = squared_divisors(divs);
+			const sum_sqr_divs: number = sum_of_the_squared_divisors(sqr_divs);
+			if ( its_a_square(sum_sqr_divs) ) result.push([num,sum_sqr_divs]);
+		}
+		// Main Step
+		for (let i = m; i <= n; i++) procedures(i);
+		return result;
+	}
+	// SECOND SOLUTION - WITH PRIMARY FACTOR LOGIC
+	public static listSquared2(m: number, n:number) {
 		const result: number[][] = [];
 		// Step Cycle
 		const procedures = (num: number) =>{
