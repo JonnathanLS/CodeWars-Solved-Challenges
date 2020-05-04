@@ -1,15 +1,11 @@
 # Instructions
 
-## Binary to Text (ASCII) Conversion
+## Square Every Digit
 
-Write a function that takes in a binary string and returns the equivalent decoded text (the text is ASCII encoded).
+In this kata, you are asked to square every digit of a number.
 
-Each 8 bits on the binary string represent 1 character on the ASCII table.
+For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
 
-The input string will always be a valid binary string.
+Note: The function accepts an integer and returns an integer
 
-Characters can be in the range from "00000000" to "11111111" (inclusive).
-
-> Note: In the case of an empty binary string your function should return an empty string.
-
-> https://www.codewars.com/kata/5583d268479559400d000064
+> https://www.codewars.com/kata/546e2562b03326a88e000020

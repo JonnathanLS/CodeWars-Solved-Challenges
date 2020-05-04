@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
-        "lib": ["ES2015", "DOM"],
-        "downlevelIteration": true
-    },
-    "include": ["challenges/**/*"],
-    "exclude": ["node_modules"]
-}
+       "lib": ["ES2015", "DOM"],
+       "downlevelIteration": true
+   },
+   "exclude": ["node_modules"]
+ }
