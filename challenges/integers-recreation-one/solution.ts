@@ -62,7 +62,7 @@ export class G964 {
 
 	// FIRST SOLUTION - LOOP 
 	// TEST EXECUTION TIME IN 31ms
-	public static listSquared1 = (m, n) => {
+	public static listSquared1 = (m: number, n: number) => {
 		const result: number[][] = [];
 		// Suport Steps
 		const its_a_divisor = (num: number, div: number) => num % div === 0;
